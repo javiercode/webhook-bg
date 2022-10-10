@@ -1,6 +1,7 @@
 import {Column, Entity, PrimaryColumn, CreateDateColumn, ObjectIdColumn, OneToOne, JoinColumn,ManyToOne, BaseEntity } from 'typeorm';
 import { ObjectID } from 'mongodb';
 import {TurnoDto} from '../dto/TurnoDto'
+import { AsignacionDto } from '../dto/AsignacionDto';
 
 @Entity('Asignacion')
 export class Asignacion{
@@ -42,11 +43,11 @@ export class Asignacion{
     sucursalModificacion:number
 
     
-    constructor(params: TurnoDto = {} as TurnoDto){
+    constructor(params: AsignacionDto = {} as AsignacionDto){
         this.responsable=params.responsable;
         this.fecha=params.fecha;
         this.observacion=params.observacion;
-        this.codTurno=params.codTurno;
+        this.codTurno=new ObjectID(params.codTurno);
     
         this.usuarioRegistro = params.usuarioRegistro|| this.usuarioRegistro;
         this.fechaRegistro = params.fechaRegistro|| new Date();

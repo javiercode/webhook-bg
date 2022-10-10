@@ -1,10 +1,10 @@
 import {Imagen} from  '../mongo/Imagen'
 import {Tarea} from  '../mongo/Tarea'
 
-export interface TurnoDto {
+export interface AsignacionDto{
     responsable:string,
     fecha:Date,
-    observacion:number,
+    observacion:string,
     codTurno:string,
     _id?:string,
     usuarioRegistro?: string,
@@ -13,31 +13,31 @@ export interface TurnoDto {
     fechaRegistro?: Date,
 }
 
-export interface TurnoEditDto {
+export interface AsignacionEditDto {
     responsable:string,
     fecha:Date,
-    observacion:number,
+    observacion:string,
     codTurno:string,
     usurioModificacion?:string
     sucursalModificacion?:number
     fechaModificacion?:Date 
 }
 
-export interface TurnoEditDto {
+export interface AsignacionFindDto {
     responsable:string,
     fecha:Date,
     observacion:number,
     codTurno:string,
 }
 
-export interface MovimientoForm {
+export interface AsignacionForm {
     responsable:string,
     fecha:string,
     observacion:string,
     codTurno:string,
 }
 
-export const movimientoRegex:MovimientoForm =  {
+export const AsignacionRegex:AsignacionForm =  {
     responsable: "^[A-Z]{1,10}$",
     fecha: "^[0-9 :/]{19}$",
     observacion: "^[a-zA-Z0-9À-ÿ .,]{0,300}$",

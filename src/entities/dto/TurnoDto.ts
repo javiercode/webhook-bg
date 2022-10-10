@@ -23,7 +23,7 @@ export interface TurnoEditDto {
     fechaModificacion?:Date 
 }
 
-export interface TurnoEditDto {
+export interface TurnoFindDto {
     responsable:string,
     descripcion:string,
     turno:number,
@@ -37,7 +37,7 @@ export interface TurnoForm {
     tipo:string,
 }
 
-export const turoRegex:TurnoForm =  {
+export const TurnoRegex:TurnoForm =  {
     responsable: "^[a-zA-ZÀ-ÿ ]{1,200}$",
     descripcion: "^[a-zA-ZÀ-ÿ ]{1,300}$",
     turno: "^[0-9]{1,10}$",
