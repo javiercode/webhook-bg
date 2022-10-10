@@ -52,6 +52,5 @@ export class Turno{
         this.fechaRegistro = params.fechaRegistro|| new Date();
         this.sucursalRegistro = params.sucursalRegistro || this.sucursalRegistro;
         this.estado = params.estado || 'A';
-        
     }
 }
