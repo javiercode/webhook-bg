@@ -54,20 +54,20 @@ class TurnoService implements ITurno {
 
     async create(clienteDto: TurnoDto,authSession:JwtPayload): Promise<MessageResponse> {
         const res:MessageResponse={success:false, message:"Error de registro", code:0};
-        try {
+        //try {
             clienteDto.sucursalRegistro = authSession.sucursal;
             clienteDto.usuarioRegistro = authSession.clave;
-            const oCliente = new Turno(clienteDto);
-            oCliente.fechaRegistro = getFecha(new Date())
-                    res.success = true;
-                    res.message = "Cliente registrado";
-                    const oRolUsuario = await MongoDataSource.manager.save(oCliente);
-                    res.data = oRolUsuario;
-        } catch (error) {
+            const oTurno = new Turno(clienteDto);
+            oTurno.fechaRegistro = getFecha(new Date())
+            res.success = true;
+            res.message = "Turno registrado";
+            const oRolUsuario = await MongoDataSource.manager.save(oTurno);
+            res.data = oRolUsuario;
+        /*} catch (error) {
             if (error instanceof TypeError) {
                 console.error(error);
             }
-        }
+        }*/
         return res;
     }
     

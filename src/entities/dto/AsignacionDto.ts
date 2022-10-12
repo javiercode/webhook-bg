@@ -38,7 +38,7 @@ export interface AsignacionForm {
 }
 
 export const AsignacionRegex:AsignacionForm =  {
-    responsable: "^[A-Z]{1,10}$",
+    responsable: "^[a-zA-Z0-9À-ÿ .,]{1,10}$",
     fecha: "^[0-9 :/]{19}$",
     observacion: "^[a-zA-Z0-9À-ÿ .,]{0,300}$",
     codTurno:"^[a-fA-F0-9]{20,50}$",

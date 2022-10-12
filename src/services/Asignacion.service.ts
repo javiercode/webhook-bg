@@ -59,7 +59,7 @@ class TurnoService implements IAsignacion {
             const oCliente = new Asignacion(clienteDto);
             oCliente.fechaRegistro = getFecha(new Date())
                     res.success = true;
-                    res.message = "Cliente registrado";
+                    res.message = "Asignacion registrada";
                     const oRolUsuario = await MongoDataSource.manager.save(oCliente);
                     res.data = oRolUsuario;
         } catch (error) {

@@ -6,6 +6,8 @@ import { RolAplicacion } from "../entities/mongo/RolAplicacion";
 import { Movimiento } from "../entities/mongo/Movimiento";
 import { Imagen } from "../entities/mongo/Imagen";
 import { Jornada } from "../entities/mongo/Jornada";
+import { Turno } from "../entities/mongo/Turno";
+import { Asignacion } from "../entities/mongo/Asignacion";
 
 const getUrlMongo = ()=>{
     var mongoURL = "mongodb://<user>:<password>@<host>:<port>/<dbname>?authSource=admin&socketTimeoutMS=90000&readPreference=primary&directConnection=true&ssl=false";
@@ -25,7 +27,7 @@ export const MongoDataSource = new DataSource({
     logging: false,
     entities: [
         // "src/entities/mongo/*.ts"
-        RolUsuario,RolAplicacion,Cliente,Tarea,Imagen,Movimiento,Jornada
+        RolUsuario,RolAplicacion,Cliente,Tarea,Imagen,Movimiento,Jornada,Turno,Asignacion
     ],
     subscribers: [
         // "src/subscriber/*.js"
