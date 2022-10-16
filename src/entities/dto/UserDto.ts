@@ -28,6 +28,14 @@ export interface createUserForm {
     sucursal: string
 }
 
+export interface UserDto {
+    username:string,
+    correo:string,
+    password:string
+    codFacebook?:string,
+    estado?:string,
+}
+
 export const createUserRegex: createUserForm = {
     codRolAplicacion: "^[0-9]{1,2}$",
     usuario: "^[a-zA-Z0-9]{3,4}$",

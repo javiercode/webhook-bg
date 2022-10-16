@@ -9,20 +9,11 @@ import { Jornada } from "../entities/mongo/Jornada";
 import { Turno } from "../entities/mongo/Turno";
 import { Asignacion } from "../entities/mongo/Asignacion";
 
-const getUrlMongo = ()=>{
-    var mongoURL = "mongodb://<user>:<password>@<host>:<port>/<dbname>?authSource=admin&socketTimeoutMS=90000&readPreference=primary&directConnection=true&ssl=false";
-    mongoURL = mongoURL.replace("<user>",(process.env.MONGO_USER || ""));
-    mongoURL = mongoURL.replace("<password>",(process.env.MONGO_PASSWORD || ""));
-    mongoURL = mongoURL.replace("<host>",(process.env.MONGO_HOST || ""));
-    mongoURL = mongoURL.replace("<port>",(process.env.MONGO_PORT || ""));
-    mongoURL = mongoURL.replace("<dbname>",(process.env.MONGO_DATABASE || ""));
-    return mongoURL;
-}
 
 export const MongoDataSource = new DataSource({
     type: "mongodb",
-    url: getUrlMongo(),
-    // database: process.env.MONGO_DATABASE,
+    url: process.env.MONGO_URL,
+    database: process.env.MONGO_DATABASE,
     synchronize: true,
     logging: false,
     entities: [
